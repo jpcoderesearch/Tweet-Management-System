@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   namespace :api, :defaults => {:format => :json}do 
     namespace :v1 do
       resources :sessions, only: [:create, :destroy]
-
       get 'welcome' => "welcome#index"
+      resources :tweets, only: [:create, :update, :destroy]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
